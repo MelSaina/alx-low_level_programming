@@ -2,7 +2,7 @@
 /**
  * _islower - main function
  *
- *character  comparison
+ *@c: character  comparison
  *
  * Return: 1 if true, 0 if false
  *
