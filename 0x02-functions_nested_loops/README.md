@@ -71,3 +71,7 @@ If n is greater than 15 or less than 0 the function should not print anything
 
 You are allowed to use the standard library
 
+102-fibonacci.c - Write a program that prints the first 50 Fibonacci numbers, starting with 1 and 2, followed by a new line.
+
+The numbers must be separated by comma, followed by a space , 
+You are allowed to use the standard library
