@@ -8,21 +8,26 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int no = '0';
+	unsigned int no =  0;
 
-	int ln =  '0';
+	int ln =  0;
 
-	if (b[ln]  == '\0')
+	if (b[ln] == '\n')
 	{
-		return (0);
+	return (0);
 	}
 	else
 	{
-		while ((b[ln] == '0')  ||  (b[ln]  ==  '1'))
+		for (; b[ln] != '\0'; ln++)
 		{
-		no  <<=  1;
-		no  +=  b[ln]  - '0';
-		ln++;
+			if (b[ln] != '0' && b[ln] != '1')
+			{
+				return (0);
+			}
+				no <<= 1;
+				no += b[ln] - '0';
+				ln++;
+
 		}
 	}
 	return (no);
