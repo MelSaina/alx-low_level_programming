@@ -26,9 +26,7 @@ unsigned int binary_to_uint(const char *b)
 			}
 				no <<= 1;
 				no += b[ln] - '0';
-				ln++;
-
-		}
+			}
 	}
 	return (no);
 }
