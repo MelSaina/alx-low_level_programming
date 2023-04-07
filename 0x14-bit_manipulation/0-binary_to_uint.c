@@ -8,24 +8,24 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-unsigned int no = 0;
-int ls =  0;
+	unsigned int no = 0;
+	int ls =  0;
 
-if (b[ls] == '\n')
-{
-	return (0);
-}
-else
-{
-	for (; b[ls] != '\0'; ls++)
+	if (b[ls] == '\n')
 	{
-		if (b[ls] != '0' && b[ls] != '1')
-		{
-			return (0);
-		}
-		no <<= 1;
-		no += b[ls] - '0';
+		return (0);
 	}
-}
-return (no);
+	else
+	{
+		for (; b[ls] != '\0'; ls++)
+		{
+			if (b[ls] != '0' && b[ls] != '1')
+			{
+				return (0);
+			}
+			no <<= 1;
+			no += b[ls] - '0';
+		}
+	}
+	return (no);
 }
