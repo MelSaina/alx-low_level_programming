@@ -9,22 +9,22 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int no = 0;
-	int len =  0;
+	int ln =  0;
 
-	if (b[len] == '\n')
+	if (b[ln] == '\n')
 	{
 		return (0);
 	}
 	else
 	{
-		for (; b[len] != '\0'; len++)
+		for (; b[ln] != '\0'; ln++)
 		{
-			if (b[len] != '0' && b[len] != '1')
+			if (b[ln] != '0' && b[ln] != '1')
 			{
 				return (0);
 			}
 			no <<= 1;
-			no += b[len] - '0';
+			no += b[ln] - '0';
 		}
 	}
 	return (no);
