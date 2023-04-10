@@ -107,6 +107,4 @@ int elf_header(char *filename)
 		break;
 	case ELFOSABI_SOLARIS:
 		printf("Solaris ABI\n");
-	}
-retuurn (0);
-}
+	
