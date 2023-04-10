@@ -112,5 +112,5 @@ int elf_header(char *filename)
 		printf("<unknown: %x>\n", header64->e_ident[EI_OSABI]);
 		break;
 	}
-	return (0);
+	return  (0);
 }
