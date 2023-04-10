@@ -19,7 +19,6 @@ int elf_header(char *filename)
 	int fd, i;
 	char buf[BUF_SIZE];
 	Elf64_Ehdr *header64;
-	Elf32_Ehdr *header32;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
@@ -110,5 +109,4 @@ int elf_header(char *filename)
 	case ELFOSABI_SOLARIS:
 		printf("Solaris ABI\n");
 	}
-}
 }
