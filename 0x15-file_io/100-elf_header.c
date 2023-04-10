@@ -35,7 +35,6 @@ int elf_header(char *filename)
 	}
 
 	header64 = (Elf64_Ehdr *)buf;
-	header32 = (Elf32_Ehdr *)buf;
 
 	/* Check if ELF file */
 	if (header64->e_ident[EI_MAG0] != ELFMAG0 ||
@@ -109,4 +108,5 @@ int elf_header(char *filename)
 	case ELFOSABI_SOLARIS:
 		printf("Solaris ABI\n");
 	}
+retuurn (0);
 }
