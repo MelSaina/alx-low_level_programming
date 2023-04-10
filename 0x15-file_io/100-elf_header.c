@@ -107,14 +107,10 @@ int elf_header(char *filename)
 		break;
 	case ELFOSABI_SOLARIS:
 		printf("Solaris ABI\n");
-<<<<<<< HEAD
-	
-=======
 		break;
 	default:
 		printf("<unknown: %x>\n", header64->e_ident[EI_OSABI]);
 		break;
 	}
-	return  (0);
+	return (0);
 }
->>>>>>> 7101fb617af21c7c898af1ba03f4b6ecb630db6e
