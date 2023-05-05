@@ -2,7 +2,9 @@
 #define MAIN_H
 
 /**
- *Desc: Contains all the main prototype functions used in the 0x14  Bit Manipulation Task
+ *Desc: Contains all the main prototype functions used
+ *@b: binary to unit converted
+ *return - return binary
  */
 
 unsigned int binary_to_uint(const char *b);
