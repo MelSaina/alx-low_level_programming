@@ -1,60 +1,49 @@
-#include <stdio.h>
 #include "search_algos.h"
 
 /**
- * advanced_binary_recursive - Recursively search for a value in a sorted array
- * @array: Pointer to the first element of the sorted array
- * @left: Index of the left boundary of the subarray
- * @right: Index of the right boundary of the subarray
- * @value: Value to search for
+ * _advanced_binary - performs advanced binary search
+ * @array: the integer array
+ * @size: its size
+ * @value: value to search for
  *
- * Return: The index where the value is located; -1 if not found
+ * Return: the index found or -1
  */
-int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
+int *_advanced_binary(int *array, size_t size, int value)
 {
-    size_t i;
+	size_t i = 0;
 
-    if (left > right)
-        return (-1);
+	if (!size || !array)
+		return (NULL);
+	for (printf("Searching in array: "); i < size; i++)
+		printf("%d%s", array[i], i + 1 == size ? "\n" : ", ");
 
-    printf("Searching in array: ");
-    for (i = left; i <= right; i++)
-    {
-        printf("%d", array[i]);
-        if (i < right)
-            printf(", ");
-        else
-            printf("\n");
-    }
-
-    i = left + (right - left) / 2;
-
-    if (array[i] == value)
-    {
-        if (i > left && array[i - 1] == value)
-            return advanced_binary_recursive(array, left, i, value);
-        return i;
-    }
-
-    if (array[i] < value)
-        return advanced_binary_recursive(array, i + 1, right, value);
-
-    return advanced_binary_recursive(array, left, i - 1, value);
+	i = (size - 1) / 2;
+	if (array[i] == value)
+	{
+		if (i)
+			return (_advanced_binary(array, i + 1, value));
+		return (array + i);
+	}
+	else if (array[i] > value)
+		return (_advanced_binary(array, i + 1, value));
+	else
+		return (_advanced_binary(array + i + 1, size - i - 1, value));
 }
 
 /**
- * advanced_binary - Search for a value in a sorted array using advanced binary search
- * @array: Pointer to the first element of the sorted array
- * @size: Number of elements in the array
- * @value: Value to search for
+ * advanced_binary - performs advanced binary search
+ * @array: the integer array
+ * @size: its size
+ * @value: value to search for
  *
- * Return: The index where the value is located; -1 if not found or if
- *         array is NULL
+ * Return: the index found or -1
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    if (array == NULL || size == 0)
-        return (-1);
+	int *a = _advanced_binary(array, size, value);
 
-    return advanced_binary_recursive(array, 0, size - 1, value);
+	if (!a)
+		return (-1);
+	else
+		return (a - array);
 }
